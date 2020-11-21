@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://pictures/space-farmer.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/farmer.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/UI/HealthBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sound/Hit_01.wav" type="AudioStream" id=4]
 [ext_resource path="res://pictures/space-farmer-left.png" type="Texture" id=5]
+[ext_resource path="res://pictures/aware.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -58,6 +59,12 @@ shape = SubResource( 3 )
 
 [node name="WalkTimer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="Aware" type="Sprite" parent="."]
+visible = false
+position = Vector2( 35, -40 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
 [connection signal="finished" from="DeathSound" to="." method="_on_DeathSound_finished"]
 [connection signal="timeout" from="Knockback" to="." method="_on_Knockback_timeout"]
 [connection signal="body_entered" from="DetectionRange" to="." method="_on_DetectionRange_body_entered"]

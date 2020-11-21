@@ -12,6 +12,8 @@ script/source = "extends Node2D
 export var max_slug = 11
 var slugs = max_slug
 
+export var interval = 50
+
 var slug_list = []
 
 # Called when the node enters the scene tree for the first time.
@@ -34,34 +36,42 @@ func shoot(ammo):
 
 func update_slug_visibility():
 	for i in range(max_slug):
-		slug_list[i].visible = i + 1 <= slugs
+		#slug_list[i].visible = i + 1 <= slugs
+		var slug = slug_list[i]
+		if i + 1 <= slugs:
+			slug.reload()
+		else:
+			slug.shoot()
 
 func init_slug_position():
 	for i in range(max_slug):
-		slug_list[i].position.x = 100 * i
+		slug_list[i].position.x = interval * i
+
+func set_max_slug(ammo):
+	max_slug = ammo
 "
 
 [node name="SlugCount" type="Node2D"]
 script = SubResource( 1 )
 
-[node name="Slug1" type="Node2D" parent="." instance=ExtResource( 1 )]
+[node name="Slug1" parent="." instance=ExtResource( 1 )]
 
-[node name="Slug2" type="Node2D" parent="." instance=ExtResource( 1 )]
+[node name="Slug2" parent="." instance=ExtResource( 1 )]
 
-[node name="Slug3" type="Node2D" parent="." instance=ExtResource( 1 )]
+[node name="Slug3" parent="." instance=ExtResource( 1 )]
 
-[node name="Slug4" type="Node2D" parent="." instance=ExtResource( 1 )]
+[node name="Slug4" parent="." instance=ExtResource( 1 )]
 
-[node name="Slug5" type="Node2D" parent="." instance=ExtResource( 1 )]
+[node name="Slug5" parent="." instance=ExtResource( 1 )]
 
-[node name="Slug6" type="Node2D" parent="." instance=ExtResource( 1 )]
+[node name="Slug6" parent="." instance=ExtResource( 1 )]
 
-[node name="Slug7" type="Node2D" parent="." instance=ExtResource( 1 )]
+[node name="Slug7" parent="." instance=ExtResource( 1 )]
 
-[node name="Slug8" type="Node2D" parent="." instance=ExtResource( 1 )]
+[node name="Slug8" parent="." instance=ExtResource( 1 )]
 
-[node name="Slug9" type="Node2D" parent="." instance=ExtResource( 1 )]
+[node name="Slug9" parent="." instance=ExtResource( 1 )]
 
-[node name="Slug10" type="Node2D" parent="." instance=ExtResource( 1 )]
+[node name="Slug10" parent="." instance=ExtResource( 1 )]
 
-[node name="Slug11" type="Node2D" parent="." instance=ExtResource( 1 )]
+[node name="Slug11" parent="." instance=ExtResource( 1 )]

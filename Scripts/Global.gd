@@ -18,6 +18,12 @@ var trident_dmg = 1
 const left_dir = Vector2(-1, 0)
 const right_dir = Vector2(1, 0)
 
+signal update_hp(hp)
+signal set_max_hp(hp)
+
+signal update_ammo(ammo)
+signal set_max_ammo(ammo)
+signal set_ammo_spacing(spacing)
 
 
 # Called when the node enters the scene tree for the first time.

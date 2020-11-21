@@ -38,11 +38,12 @@ onready var background = get_node("/root/Game/Backgroud")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$SlugCount.max_slug = max_ammo
-	$Sprite.animation = "still"
+	Global.emit_signal("set_max_ammo", max_ammo)
+	Global.emit_signal("set_ammo_spacing", 50)
 	hp = max_hp
-	$PlayerHP.max_hp = max_hp
-	$PlayerHP.update_hp(hp)
+	Global.emit_signal("set_max_hp", max_hp)
+	Global.emit_signal("update_hp", hp)
+	$Sprite.animation = "still"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,7 +55,6 @@ func _process(delta):
 		reload()
 	if Input.is_action_just_pressed("ui_shift"):
 		shell_shots += 1
-
 	
 func cow_face_left(left):
 	if left:
@@ -71,7 +71,7 @@ func shoot_bullet(pos = position):
 		ammo -= 1
 		shoot_shots(pos, shell_shots)
 		$GunSound.play()
-		$SlugCount.shoot(ammo)
+		Global.emit_signal("update_ammo", ammo)
 		is_pumping = true
 	else:
 		if not $EmptyGun.playing:
@@ -96,7 +96,7 @@ func reload():
 	else:
 		ammo += 1
 		$ReloadGun.play()
-	$SlugCount.shoot(ammo)
+	Global.emit_signal("update_ammo", ammo)
 
 func gun_busy():
 	return $ReloadGun.playing or $GunSound.playing
@@ -168,7 +168,7 @@ func _on_JumpSound_finished():
 
 func take_damage(dmg):
 	hp -= dmg
-	$PlayerHP.update_hp(hp)
+	Global.emit_signal("update_hp", hp)
 	if not $MooSoud.playing:
 		$MooSoud.play()
 

@@ -100,12 +100,17 @@ func check_collision_dmg():
 		if collision.collider.get("is_player") == true:
 			collision.collider.got_hit_by_farmer(face_left)
 			return
+		elif knockback_vec != Vector2() and collision.collider.get("is_farmer") == true:
+			var left = knockback_vec.x < 0
+			collision.collider.knockback(left)
+			return
 
 
 func _on_DetectionRange_body_entered(body):
 	if body.get("is_player") == true:
 		speed = base_speed * chase_mult
 		chasing_player = true
+		$Aware.visible = true
 		$WalkTimer.stop()
 
 
@@ -114,6 +119,7 @@ func _on_DetectionRange_body_exited(body):
 	if body.get("is_player") == true:
 		speed = base_speed
 		chasing_player = false
+		$Aware.visible = false
 		$WalkTimer.start()
 
 
