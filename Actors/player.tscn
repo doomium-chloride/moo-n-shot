@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://pictures/cow.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/player.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://sound/266105__marregheriti__shotgun.wav" type="AudioStream" id=4]
+[ext_resource path="res://sound/275015__wadaltmon__bite-apple.wav" type="AudioStream" id=5]
 [ext_resource path="res://sound/154934__klawykogut__empty-gun-shot.wav" type="AudioStream" id=6]
 [ext_resource path="res://sound/200966__paul368__shotgun-cock-reload-layered-powerful.wav" type="AudioStream" id=7]
 [ext_resource path="res://pictures/cow-walk.png" type="Texture" id=8]
@@ -71,6 +72,9 @@ one_shot = true
 [node name="Flash" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="AppleCrunch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 [connection signal="finished" from="GunSound" to="." method="_on_GunSound_finished"]
 [connection signal="finished" from="JumpSound" to="." method="_on_JumpSound_finished"]
 [connection signal="timeout" from="Invulnerability" to="." method="_on_Invulnerability_timeout"]

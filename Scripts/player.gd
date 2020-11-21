@@ -172,6 +172,15 @@ func take_damage(dmg):
 	if not $MooSoud.playing:
 		$MooSoud.play()
 
+func heal(healing):
+	if hp >= max_hp:
+		return false
+	hp += healing
+	Global.emit_signal("update_hp", hp)
+	if not $AppleCrunch.playing:
+		$AppleCrunch.play()
+	return true
+
 func got_hit_by_farmer(left):
 	if not invulnerable:
 		$Sprite.modulate = Color(10,10,10)

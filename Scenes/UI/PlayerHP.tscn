@@ -2,14 +2,42 @@
 
 [ext_resource path="res://pictures/healthbar/circle-fill.png" type="Texture" id=1]
 [ext_resource path="res://pictures/healthbar/circle-border.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/HealthBar.gd" type="Script" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+onready var health_bar = $HealthBar
+export var max_hp = 10
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	health_bar.max_value = max_hp
+	Global.connect(\"update_hp\", self, \"update_hp\")
+	Global.connect(\"set_max_hp\", self, \"set_max_hp\")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+func update_hp(hp):
+	health_bar.value = hp
+
+func set_max_hp(hp):
+	max_hp = hp
+	health_bar.max_value = max_hp
+"
 
 [node name="PlayerHP" type="Control"]
 anchor_right = 0.103
 anchor_bottom = 0.172
 margin_right = -0.472008
 margin_bottom = -0.200005
-script = ExtResource( 3 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

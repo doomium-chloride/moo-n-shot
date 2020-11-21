@@ -25,6 +25,8 @@ signal update_ammo(ammo)
 signal set_max_ammo(ammo)
 signal set_ammo_spacing(spacing)
 
+var drop_chance = 1
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

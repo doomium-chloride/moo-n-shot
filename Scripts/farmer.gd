@@ -16,6 +16,9 @@ var knockback_value_vertical = 20
 var knockback_value_horizontal = 300
 var walkback_chance = 0.8
 
+const apple_class = preload("res://Scenes/PowerUp/Apple.tscn")
+const ammo_class = preload("res://Scenes/PowerUp/AmmoCrate.tscn")
+
 const is_farmer = true
 
 var knockback_vec = Vector2()
@@ -88,8 +91,19 @@ func knockback(left):
 
 
 func _on_DeathSound_finished():
+	if Global.chance(Global.drop_chance):
+		spawn_power_up()
 	queue_free()
 
+func spawn_power_up():
+	if Global.flip_coin():
+		var ammo = ammo_class.instance()
+		ammo.position = get_position()
+		get_tree().get_root().add_child(ammo)
+	else:
+		var apple = apple_class.instance()
+		apple.position = get_position()
+		get_tree().get_root().add_child(apple)
 
 func _on_Knockback_timeout():
 	knockback_vec = Vector2()
