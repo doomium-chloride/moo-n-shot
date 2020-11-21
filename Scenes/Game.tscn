@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Actors/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Farm.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/InvisibleWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/UI/SlugContainer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/UI/PlayerHP.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/UI/Pause.tscn" type="PackedScene" id=10]
 
 [node name="Game" type="Node"]
 
@@ -28,6 +29,8 @@ margin_left = 50.0
 margin_top = 50.0
 margin_right = 0.0
 margin_bottom = 0.0
+
+[node name="Pause" parent="UI" instance=ExtResource( 10 )]
 
 [node name="Backgroud" parent="." instance=ExtResource( 5 )]
 

@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+
+func _ready():
+	pause_mode = PAUSE_MODE_PROCESS
+	visible = false
+
+func _input(event):
+	if event.is_action_pressed(\"ui_cancel\"):
+		toggle_pause()
+
+func toggle_pause():
+	var paused_state = not get_tree().paused
+	get_tree().paused = paused_state
+	visible = paused_state
+
+func _on_Continue_pressed():
+	print(\"continue\")
+	toggle_pause()
+
+
+func _on_Exit_pressed():
+	print(\"exit\")
+"
+
+[node name="Pause" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Overlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.470588 )
+
+[node name="CenterContainer" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -28.0
+margin_top = 254.0
+margin_right = 29.0
+margin_bottom = -280.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="CenterContainer"]
+margin_right = 69.0
+margin_bottom = 20.0
+text = "Continue
+"
+
+[node name="Exit" type="Button" parent="CenterContainer"]
+margin_top = 24.0
+margin_right = 69.0
+margin_bottom = 44.0
+text = "Exit
+"
+[connection signal="pressed" from="CenterContainer/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="CenterContainer/Exit" to="." method="_on_Exit_pressed"]
