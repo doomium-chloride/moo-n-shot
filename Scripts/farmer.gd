@@ -97,13 +97,19 @@ func _on_DeathSound_finished():
 
 func spawn_power_up():
 	if Global.flip_coin():
-		var ammo = ammo_class.instance()
-		ammo.position = get_position()
-		get_tree().get_root().add_child(ammo)
+		spawn_powerup_instance(ammo_class)
 	else:
-		var apple = apple_class.instance()
-		apple.position = get_position()
-		get_tree().get_root().add_child(apple)
+		spawn_powerup_instance(apple_class)
+
+func spawn_powerup_instance(powerup_class):
+	var powerup = powerup_class.instance()
+	powerup.position = get_position()
+	var powerup_node = get_tree().get_root().get_node("Game").get_node("PowerUps")
+	if powerup_node != null:
+		powerup_node.add_child(powerup)
+	else:# something is wrong here
+		get_tree().get_root().add_child(powerup)
+		print("No powerup node")
 
 func _on_Knockback_timeout():
 	knockback_vec = Vector2()

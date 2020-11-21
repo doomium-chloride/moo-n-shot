@@ -43,6 +43,15 @@ position = Vector2( 2077.62, -611.993 )
 [node name="InvisibleWall2" parent="Fence" instance=ExtResource( 7 )]
 position = Vector2( -2219.47, -672.303 )
 
+[node name="PowerUps" type="Node" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="FarmerBase" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1264.66, -69.3378 )
+
 [node name="ground" type="Node2D" parent="."]
 
 [node name="Farm" parent="ground" instance=ExtResource( 2 )]
@@ -65,10 +74,3 @@ position = Vector2( 620, 60.016 )
 
 [node name="Farm4" parent="ground" instance=ExtResource( 2 )]
 position = Vector2( 930, 60.016 )
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-autoplay = true
-
-[node name="FarmerBase" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1264.66, -69.3378 )
