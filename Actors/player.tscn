@@ -64,6 +64,9 @@ stream = ExtResource( 10 )
 [node name="MooSoud" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 
+[node name="AppleCrunch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
 [node name="Invulnerability" type="Timer" parent="."]
 process_mode = 0
 wait_time = 0.2
@@ -73,9 +76,11 @@ one_shot = true
 wait_time = 0.1
 one_shot = true
 
-[node name="AppleCrunch" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+[node name="Recoil" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
 [connection signal="finished" from="GunSound" to="." method="_on_GunSound_finished"]
 [connection signal="finished" from="JumpSound" to="." method="_on_JumpSound_finished"]
 [connection signal="timeout" from="Invulnerability" to="." method="_on_Invulnerability_timeout"]
 [connection signal="timeout" from="Flash" to="." method="_on_Flash_timeout"]
+[connection signal="timeout" from="Recoil" to="." method="_on_Recoil_timeout"]

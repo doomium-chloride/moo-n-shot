@@ -5,7 +5,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 
-var is_player = true
+const is_player = true
 
 const base_speed = 300
 const bullet_class = preload("res://Actors/bullet.tscn")
@@ -31,7 +31,9 @@ var jumping = false
 var knockback_vec = Vector2()
 var knockback_value = Global.gravity
 var jump_mult = 6
+var recoil_vec = Vector2()
 
+var recoiling = false
 var invulnerable = false
 
 onready var background = get_node("/root/Game/Backgroud")
@@ -53,8 +55,6 @@ func _process(delta):
 		shoot_bullet(get_bullet_pos())
 	if Input.is_action_just_pressed("ui_down"):
 		reload()
-	if Input.is_action_just_pressed("ui_shift"):
-		shell_shots += 1
 	
 func cow_face_left(left):
 	if left:
@@ -69,6 +69,7 @@ func shoot_bullet(pos = position):
 		return
 	if ammo > 0:
 		ammo -= 1
+		check_recoil()
 		shoot_shots(pos, shell_shots)
 		$GunSound.play()
 		Global.emit_signal("update_ammo", ammo)
@@ -87,6 +88,8 @@ func shoot_1_shot(pos):
 func shoot_shots(pos, shots = 5):
 	for i in range(shots):
 		shoot_1_shot(pos)
+		if recoiling:
+			recoil()
 
 func reload():
 	if gun_busy():
@@ -130,6 +133,8 @@ func _physics_process(delta):
 	
 	if invulnerable:
 		move_vec += knockback_vec
+	if recoiling:
+		move_vec += recoil_vec
 	if jumping:
 		move_vec -= gravity * jump_mult
 	else:
@@ -207,3 +212,19 @@ func _on_Invulnerability_timeout():
 
 func _on_Flash_timeout():
 	$Sprite.modulate = Color(1,1,1)
+
+func check_recoil():
+	if not grounded:
+		recoiling = true
+		$Recoil.start()
+
+func recoil():
+	# move backwards
+	if face_left:
+		recoil_vec.x += knockback_value
+	else:
+		recoil_vec.x -= knockback_value
+
+func _on_Recoil_timeout():
+	recoiling = false
+	recoil_vec = Vector2()

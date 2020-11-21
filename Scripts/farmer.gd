@@ -29,6 +29,10 @@ var chasing_player = false
 
 var dying = false
 
+var jumping = false
+
+var jump_mult = 3
+
 export var player_node_string = "/root/Game/Player"
 
 # Called when the node enters the scene tree for the first time.
@@ -65,6 +69,9 @@ func _physics_process(delta):
 	var move_vec = walk_dir * speed
 	
 	var gravity = Vector2(0, Global.gravity)
+	
+	if jumping:
+		gravity *= -1 * jump_mult
 	
 	move_vec += gravity + knockback_vec
 	
@@ -117,13 +124,14 @@ func _on_Knockback_timeout():
 func check_collision_dmg():
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		if collision.collider.get("is_player") == true:
+		var body = collision.collider
+		if body.get("is_player") == true:
 			collision.collider.got_hit_by_farmer(face_left)
-			return
-		elif knockback_vec != Vector2() and collision.collider.get("is_farmer") == true:
+		elif knockback_vec != Vector2() and body.get("is_farmer") == true:
 			var left = knockback_vec.x < 0
-			collision.collider.knockback(left)
-			return
+			body.knockback(left)
+		elif chasing_player and body.get("is_fence") == true:
+			jump()
 
 
 func _on_DetectionRange_body_entered(body):
@@ -147,3 +155,11 @@ func _on_DetectionRange_body_exited(body):
 func _on_WalkTimer_timeout():
 	if Global.chance(walkback_chance):
 		face_left = !face_left
+
+func jump():
+	jumping = true
+	$JumpTimer.start()
+
+
+func _on_JumpTimer_timeout():
+	jumping = false

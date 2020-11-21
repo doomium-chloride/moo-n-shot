@@ -65,8 +65,13 @@ visible = false
 position = Vector2( 35, -40 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 [connection signal="finished" from="DeathSound" to="." method="_on_DeathSound_finished"]
 [connection signal="timeout" from="Knockback" to="." method="_on_Knockback_timeout"]
 [connection signal="body_entered" from="DetectionRange" to="." method="_on_DetectionRange_body_entered"]
 [connection signal="body_exited" from="DetectionRange" to="." method="_on_DetectionRange_body_exited"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_WalkTimer_timeout"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
