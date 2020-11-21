@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/200966__paul368__shotgun-cock-reload-layered-powerful.wav-e176061f8a75ced099099ddb00dde1ff.sample"
+
+[deps]
+
+source_file="res://sound/200966__paul368__shotgun-cock-reload-layered-powerful.wav"
+dest_files=[ "res://.import/200966__paul368__shotgun-cock-reload-layered-powerful.wav-e176061f8a75ced099099ddb00dde1ff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

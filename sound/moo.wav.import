@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/moo.wav-9f03a1f39035e7543698d860a856d90a.sample"
+
+[deps]
+
+source_file="res://sound/moo.wav"
+dest_files=[ "res://.import/moo.wav-9f03a1f39035e7543698d860a856d90a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

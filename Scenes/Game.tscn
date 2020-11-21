@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Actors/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Farm.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/FarmerBase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sound/Still-Pickin.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Fence.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/InvisibleWall.tscn" type="PackedScene" id=7]
+
+[node name="Game" type="Node"]
+
+[node name="Backgroud" parent="." instance=ExtResource( 5 )]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2.3327, -76.9792 )
+
+[node name="Fence" parent="." instance=ExtResource( 6 )]
+position = Vector2( 235.209, -10.3389 )
+
+[node name="InvisibleWall" parent="Fence" instance=ExtResource( 7 )]
+position = Vector2( 2077.62, -611.993 )
+
+[node name="InvisibleWall2" parent="Fence" instance=ExtResource( 7 )]
+position = Vector2( -2219.47, -672.303 )
+
+[node name="ground" type="Node2D" parent="."]
+
+[node name="Farm" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( 0.857361, 60.0163 )
+
+[node name="Farm7" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( -930, 60.016 )
+
+[node name="Farm6" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( -620, 60.016 )
+
+[node name="Farm5" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( -310, 60.016 )
+
+[node name="Farm2" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( 310, 60.016 )
+
+[node name="Farm3" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( 620, 60.016 )
+
+[node name="Farm4" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( 930, 60.016 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="FarmerBase" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1264.66, -69.3378 )
