@@ -6,7 +6,7 @@
 [ext_resource path="res://sound/266105__marregheriti__shotgun.wav" type="AudioStream" id=4]
 [ext_resource path="res://sound/275015__wadaltmon__bite-apple.wav" type="AudioStream" id=5]
 [ext_resource path="res://sound/154934__klawykogut__empty-gun-shot.wav" type="AudioStream" id=6]
-[ext_resource path="res://sound/200966__paul368__shotgun-cock-reload-layered-powerful.wav" type="AudioStream" id=7]
+[ext_resource path="res://sound/shotgun-cock-reload-short.wav" type="AudioStream" id=7]
 [ext_resource path="res://pictures/cow-walk.png" type="Texture" id=8]
 [ext_resource path="res://pictures/cow-pump.png" type="Texture" id=9]
 [ext_resource path="res://sound/Jump_04.wav" type="AudioStream" id=10]
@@ -29,15 +29,15 @@ animations = [ {
 "name": "still",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": false,
 "name": "dead",
 "speed": 0.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]

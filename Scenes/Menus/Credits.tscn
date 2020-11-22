@@ -1,0 +1,107 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sound/Black Knight.ogg" type="AudioStream" id=1]
+[ext_resource path="res://pictures/title.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Button
+
+func _input(event):
+	if event.is_action_pressed(\"ui_accept\"):
+		_on_Button_pressed()
+
+func _on_Button_pressed():
+	Global.goto_scene(Global.main_menu)
+
+"
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 262.0
+margin_top = 132.0
+margin_right = 762.0
+margin_bottom = 468.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+margin_right = 500.0
+margin_bottom = 150.0
+texture = ExtResource( 2 )
+
+[node name="sound" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 154.0
+margin_right = 500.0
+margin_bottom = 168.0
+text = "Sound FX : CC0 stuff from freesound.org"
+
+[node name="StillPickin" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 172.0
+margin_right = 500.0
+margin_bottom = 186.0
+text = "Music - Still Pickin :  Kevin Macleod"
+
+[node name="Conflict" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 190.0
+margin_right = 500.0
+margin_bottom = 204.0
+text = "Music - Beginning of Conflict : Rafael Krux"
+
+[node name="BlackKnight" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 208.0
+margin_right = 500.0
+margin_bottom = 222.0
+text = "Music - Black Knight : Rafael Krux"
+
+[node name="Nightmare" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 226.0
+margin_right = 500.0
+margin_bottom = 240.0
+text = "Music - Nightmare : Alexander Nakarada"
+
+[node name="BloodEagle" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 244.0
+margin_right = 500.0
+margin_bottom = 258.0
+text = "Music - Blood Eagle : Alexander Nakarada"
+
+[node name="Art" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 262.0
+margin_right = 500.0
+margin_bottom = 276.0
+text = "Illustrations : doomium-chloride"
+
+[node name="Program" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 280.0
+margin_right = 500.0
+margin_bottom = 294.0
+text = "Programming : doomium-chloride"
+
+[node name="Testing" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 298.0
+margin_right = 500.0
+margin_bottom = 312.0
+text = "Testing & Feedback : My Friends"
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 316.0
+margin_right = 500.0
+margin_bottom = 336.0
+text = "Back"
+script = SubResource( 1 )
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="CenterContainer/VBoxContainer/Button" method="_on_Button_pressed"]

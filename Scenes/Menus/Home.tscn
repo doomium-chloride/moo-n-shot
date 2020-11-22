@@ -13,6 +13,7 @@ onready var tut_button = get_node(\"MarginContainer/HBoxContainer/CenterContaine
 onready var credit_button = get_node(\"MarginContainer/HBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/CreditsButton\")
 
 const game_intro = \"res://Scenes/Menus/Intro.tscn\"
+const credits = \"res://Scenes/Menus/Credits.tscn\"
 
 signal start
 signal tut
@@ -25,6 +26,8 @@ onready var buttons = [start_button, tut_button, credit_button]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	connect(\"start\", self, \"_on_start_signal\")
+	connect(\"tut\", self, \"_on_tut_signal\")
+	connect(\"credit\", self, \"_on_credit_signal\")
 	set_process(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,6 +58,13 @@ func update_selected_button():
 
 func _on_start_signal():
 	Global.goto_scene(game_intro)
+
+func _on_credit_signal():
+	Global.goto_scene(credits)
+
+func _on_tut_signal():
+	print(\"go to tutorial\")
+	pass
 "
 
 [node name="Home" type="Control"]
@@ -147,6 +157,8 @@ margin_left = 206.0
 margin_right = 293.0
 margin_bottom = 20.0
 text = "How to play"
+script = ExtResource( 3 )
+code = "tut"
 
 [node name="CenterContainer3" type="CenterContainer" parent="MarginContainer/HBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 202.0
@@ -158,6 +170,8 @@ margin_left = 221.0
 margin_right = 278.0
 margin_bottom = 20.0
 text = "Credits"
+script = ExtResource( 3 )
+code = "credit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

@@ -51,9 +51,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if Input.is_action_just_pressed("ui_select"):
+	if Input.is_action_pressed("ui_select"):
 		shoot_bullet(get_bullet_pos())
-	if Input.is_action_just_pressed("ui_down"):
+	if Input.is_action_pressed("ui_down"):
 		reload()
 	if Input.is_action_just_pressed("ui_shift"):
 		shell_shots += 10
