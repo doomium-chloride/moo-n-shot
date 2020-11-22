@@ -5,6 +5,13 @@ script/source = "extends Control
 
 const main_menu = \"res://Scenes/Menus/Home.tscn\"
 
+onready var continue_button = get_node(\"CenterContainer/Continue\")
+onready var exit_button = get_node(\"CenterContainer/Exit\")
+
+var selected_button = -1
+
+onready var buttons = [continue_button, exit_button]
+
 func _ready():
 	pause_mode = PAUSE_MODE_PROCESS
 	visible = false
@@ -12,6 +19,10 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed(\"ui_cancel\"):
 		toggle_pause()
+	if event.is_action_pressed(\"ui_down\"):
+		focus_down()
+	if event.is_action_pressed(\"ui_up\"):
+		focus_up()
 
 func toggle_pause():
 	var paused_state = not get_tree().paused
@@ -24,6 +35,25 @@ func _on_Continue_pressed():
 
 func _on_Exit_pressed():
 	Global.goto_scene(main_menu)
+
+func focus_up():
+	if selected_button > 0 and len(buttons) > 0:
+		selected_button -= 1
+		update_selected_button()
+	elif selected_button <= 0:
+		selected_button = len(buttons) - 1
+		update_selected_button()
+			
+func focus_down():
+	if selected_button < (len(buttons) - 1):
+		selected_button += 1
+		update_selected_button()
+	elif selected_button == len(buttons) - 1:
+		selected_button = 0
+		update_selected_button()
+
+func update_selected_button():
+	buttons[selected_button].grab_focus()
 "
 
 [node name="Pause" type="Control"]
