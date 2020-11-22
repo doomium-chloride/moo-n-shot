@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Blood Eagle.ogg-56b1584c9f6a8db784fb813e438f025d.oggstr"
+
+[deps]
+
+source_file="res://sound/Blood Eagle.ogg"
+dest_files=[ "res://.import/Blood Eagle.ogg-56b1584c9f6a8db784fb813e438f025d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
