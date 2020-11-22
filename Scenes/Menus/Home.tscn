@@ -13,6 +13,7 @@ onready var tut_button = get_node(\"MarginContainer/HBoxContainer/CenterContaine
 onready var credit_button = get_node(\"MarginContainer/HBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/CreditsButton\")
 
 const game_intro = \"res://Scenes/Menus/Intro.tscn\"
+const how2play = \"res://Scenes/Menus/How2Play.tscn\"
 const credits = \"res://Scenes/Menus/Credits.tscn\"
 
 signal start
@@ -63,8 +64,7 @@ func _on_credit_signal():
 	Global.goto_scene(credits)
 
 func _on_tut_signal():
-	print(\"go to tutorial\")
-	pass
+	Global.goto_scene(how2play)
 "
 
 [node name="Home" type="Control"]

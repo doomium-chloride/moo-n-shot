@@ -192,7 +192,22 @@ margin_left = 3600.0
 margin_top = -16.4044
 margin_right = 1540.39
 margin_bottom = -2.40436
-text = "Investigate the source"
+text = "There is something ahead"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow2" type="Sprite" parent="FloatingText"]
+position = Vector2( 3700, 50 )
+texture = ExtResource( 13 )
+
+[node name="MoreFloatingText" type="Node2D" parent="."]
+position = Vector2( 1700, -200 )
+
+[node name="DestroyLabel" type="Label" parent="MoreFloatingText"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Destroy the ship"
 __meta__ = {
 "_edit_use_anchors_": false
 }

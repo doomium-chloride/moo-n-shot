@@ -2,18 +2,7 @@
 
 [ext_resource path="res://sound/Black Knight.ogg" type="AudioStream" id=1]
 [ext_resource path="res://pictures/title.png" type="Texture" id=2]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Button
-
-func _input(event):
-	if event.is_action_pressed(\"ui_accept\"):
-		_on_Button_pressed()
-
-func _on_Button_pressed():
-	Global.goto_scene(Global.main_menu)
-
-"
+[ext_resource path="res://Scripts/to_main_menu.gd" type="Script" id=3]
 
 [node name="Credits" type="Control"]
 anchor_right = 1.0
@@ -103,5 +92,4 @@ margin_top = 316.0
 margin_right = 500.0
 margin_bottom = 336.0
 text = "Back"
-script = SubResource( 1 )
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="CenterContainer/VBoxContainer/Button" method="_on_Button_pressed"]
+script = ExtResource( 3 )
