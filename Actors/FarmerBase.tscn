@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://pictures/saucer.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/FarmerBase.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/UI/HealthBar.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 208.604, 8.97356 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 140.218, 16.4419 )
+extents = Vector2( 140.218, 26.9294 )
 
 [node name="FarmerBase" type="KinematicBody2D"]
 collision_layer = 3
@@ -28,6 +29,12 @@ wait_time = 5.0
 [node name="Container" type="Node" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 40 )
+position = Vector2( 0, 50 )
 shape = SubResource( 2 )
+
+[node name="HealthUI" parent="." instance=ExtResource( 3 )]
+margin_left = -50.7184
+margin_top = 32.6743
+margin_right = -50.7184
+margin_bottom = 32.6743
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

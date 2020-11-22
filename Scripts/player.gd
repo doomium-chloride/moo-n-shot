@@ -55,6 +55,8 @@ func _process(delta):
 		shoot_bullet(get_bullet_pos())
 	if Input.is_action_just_pressed("ui_down"):
 		reload()
+	if Input.is_action_just_pressed("ui_shift"):
+		shell_shots += 10
 	
 func cow_face_left(left):
 	if left:

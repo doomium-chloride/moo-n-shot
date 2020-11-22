@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Actors/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Farm.tscn" type="PackedScene" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://Scenes/UI/SlugContainer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/UI/PlayerHP.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/UI/Pause.tscn" type="PackedScene" id=10]
+[ext_resource path="res://pictures/barn.png" type="Texture" id=11]
+[ext_resource path="res://Actors/farmer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://pictures/arrows/right.png" type="Texture" id=13]
 
 [node name="Game" type="Node"]
 
@@ -34,17 +37,36 @@ margin_bottom = 0.0
 
 [node name="Backgroud" parent="." instance=ExtResource( 5 )]
 
+[node name="Backdrops" type="Node" parent="."]
+
+[node name="Barn" type="Sprite" parent="Backdrops"]
+position = Vector2( -547.394, -225.971 )
+texture = ExtResource( 11 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -50 )
+position = Vector2( -3031.12, -75.3243 )
 
-[node name="Fence" parent="." instance=ExtResource( 6 )]
-position = Vector2( 235.209, -10.3389 )
+[node name="Barriers" type="Node" parent="."]
 
-[node name="InvisibleWall" parent="Fence" instance=ExtResource( 7 )]
-position = Vector2( 2077.62, -611.993 )
+[node name="Fence" parent="Barriers" instance=ExtResource( 6 )]
+position = Vector2( 240, -10.339 )
 
-[node name="InvisibleWall2" parent="Fence" instance=ExtResource( 7 )]
-position = Vector2( -2219.47, -672.303 )
+[node name="Fence4" parent="Barriers" instance=ExtResource( 6 )]
+position = Vector2( 840, -10.339 )
+
+[node name="Fence2" parent="Barriers" instance=ExtResource( 6 )]
+position = Vector2( -1800, -10.339 )
+
+[node name="Fence3" parent="Barriers" instance=ExtResource( 6 )]
+position = Vector2( -1200, -10.339 )
+
+[node name="InvisibleWall" parent="Barriers" instance=ExtResource( 7 )]
+position = Vector2( 2000, -377.535 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="InvisibleWall2" parent="Barriers" instance=ExtResource( 7 )]
+position = Vector2( -3200, -377.535 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="PowerUps" type="Node" parent="."]
 
@@ -53,7 +75,36 @@ stream = ExtResource( 4 )
 autoplay = true
 
 [node name="FarmerBase" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1264.66, -69.3378 )
+position = Vector2( 1847.12, -45.9615 )
+
+[node name="Farmers" type="Node" parent="."]
+
+[node name="Farmer" parent="Farmers" instance=ExtResource( 12 )]
+position = Vector2( -535.706, -352.592 )
+
+[node name="Farmer1" parent="Farmers" instance=ExtResource( 12 )]
+position = Vector2( -319.04, -257.357 )
+
+[node name="Farmer2" parent="Farmers" instance=ExtResource( 12 )]
+position = Vector2( -798.254, -270.993 )
+
+[node name="Farmer8" parent="Farmers" instance=ExtResource( 12 )]
+position = Vector2( -500, -5000 )
+
+[node name="Farmer7" parent="Farmers" instance=ExtResource( 12 )]
+position = Vector2( -1000, -100 )
+
+[node name="Farmer3" parent="Farmers" instance=ExtResource( 12 )]
+position = Vector2( -67.7454, -161.903 )
+
+[node name="Farmer4" parent="Farmers" instance=ExtResource( 12 )]
+position = Vector2( 127.057, -70.3463 )
+
+[node name="Farmer5" parent="Farmers" instance=ExtResource( 12 )]
+position = Vector2( -535.706, -1500 )
+
+[node name="Farmer6" parent="Farmers" instance=ExtResource( 12 )]
+position = Vector2( -535.706, -3000 )
 
 [node name="ground" type="Node2D" parent="."]
 
@@ -62,6 +113,30 @@ position = Vector2( 0.857361, 60.0163 )
 
 [node name="Farm7" parent="ground" instance=ExtResource( 2 )]
 position = Vector2( -930, 60.016 )
+
+[node name="Farm8" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( -1240, 60.016 )
+
+[node name="Farm9" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( -1550, 60.016 )
+
+[node name="Farm10" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( -1860, 60.016 )
+
+[node name="Farm11" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( -2170, 60.016 )
+
+[node name="Farm12" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( -2480, 60.016 )
+
+[node name="Farm13" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( -2790, 60.016 )
+
+[node name="Farm14" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( -3100, 60.016 )
+
+[node name="Farm15" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( -3100, 60.016 )
 
 [node name="Farm6" parent="ground" instance=ExtResource( 2 )]
 position = Vector2( -620, 60.016 )
@@ -77,3 +152,47 @@ position = Vector2( 620, 60.016 )
 
 [node name="Farm4" parent="ground" instance=ExtResource( 2 )]
 position = Vector2( 930, 60.016 )
+
+[node name="Farm16" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( 1240, 60.016 )
+
+[node name="Farm17" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( 1550, 60.016 )
+
+[node name="Farm18" parent="ground" instance=ExtResource( 2 )]
+position = Vector2( 1860, 60.016 )
+
+[node name="FloatingText" type="Node2D" parent="."]
+position = Vector2( -3300, -200 )
+
+[node name="SaveFarm" type="Label" parent="FloatingText"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Save your barn!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" type="Sprite" parent="FloatingText"]
+position = Vector2( 50, 50 )
+texture = ExtResource( 13 )
+
+[node name="JumpText" type="Label" parent="FloatingText"]
+margin_left = 1435.39
+margin_top = -16.4044
+margin_right = 1540.39
+margin_bottom = -2.40436
+text = "Jump over the fence"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InvestigateText" type="Label" parent="FloatingText"]
+margin_left = 3600.0
+margin_top = -16.4044
+margin_right = 1540.39
+margin_bottom = -2.40436
+text = "Investigate the source"
+__meta__ = {
+"_edit_use_anchors_": false
+}
