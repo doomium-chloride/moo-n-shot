@@ -5,6 +5,7 @@ func _ready():
 	next_scene = "res://Scenes/Game.tscn"
 	text_array = [
 		"Beef demand has skyrocketed",
-		"blah"
+		"blah blah insert story",
+		"game starting..."
 	]
 	init()

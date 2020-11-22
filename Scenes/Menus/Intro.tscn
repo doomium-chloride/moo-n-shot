@@ -19,6 +19,9 @@ margin_left = 82.0
 margin_top = 51.0
 margin_right = 674.0
 margin_bottom = 286.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Prev" type="Button" parent="."]
 margin_left = 58.1561
@@ -50,6 +53,9 @@ margin_bottom = 461.986
 text = "Next"
 icon = ExtResource( 1 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Typer" type="Timer" parent="."]
 wait_time = 0.01

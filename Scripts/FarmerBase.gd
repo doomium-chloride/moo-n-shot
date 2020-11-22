@@ -14,6 +14,7 @@ var hp = max_hp
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hp = max_hp
+	$HealthUI.set_max_hp(max_hp)
 	$HealthUI.update_hp(hp)
 	$Timer.wait_time = period
 	$Timer.start()
@@ -37,3 +38,8 @@ func _on_Timer_timeout():
 func got_hit(dmg):
 	hp -= dmg
 	$HealthUI.update_hp(hp)
+	if hp <= 0 and not $DeathSound.playing:
+		$DeathSound.play()
+
+func _on_DeathSound_finished():
+	Global.goto_scene("res://Scenes/Menus/Victory.tscn")

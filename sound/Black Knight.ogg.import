@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Black Knight.ogg-3d37105f8627c4b735ad7c873a285093.oggstr"
+
+[deps]
+
+source_file="res://sound/Black Knight.ogg"
+dest_files=[ "res://.import/Black Knight.ogg-3d37105f8627c4b735ad7c873a285093.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

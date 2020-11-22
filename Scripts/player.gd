@@ -158,7 +158,9 @@ func check_keys():
 
 func set_anim():
 	var anim
-	if is_pumping:
+	if is_dying():
+		anim = "dead"
+	elif is_pumping:
 		anim = "pump"
 	elif is_moving:
 		anim = "walk"
@@ -176,7 +178,9 @@ func _on_JumpSound_finished():
 func take_damage(dmg):
 	hp -= dmg
 	Global.emit_signal("update_hp", hp)
-	if not $MooSoud.playing:
+	if hp <= 0 and not is_dying():
+		$DeathSound.play()
+	elif not $MooSoud.playing and not is_dying():
 		$MooSoud.play()
 
 func heal(healing):
@@ -189,14 +193,13 @@ func heal(healing):
 	return true
 
 func got_hit_by_farmer(left):
-	if not invulnerable:
+	if not invulnerable and not is_dying():
 		$Sprite.modulate = Color(10,10,10)
 		$Flash.start()
 		knockback(left)
 		take_damage(Global.trident_dmg)
 		invulnerable = true
 		$Invulnerability.start()
-
 
 func knockback(left):
 	if left:
@@ -230,3 +233,10 @@ func recoil():
 func _on_Recoil_timeout():
 	recoiling = false
 	recoil_vec = Vector2()
+
+func is_dying():
+	return $DeathSound.playing
+
+
+func _on_DeathSound_finished():
+	Global.goto_scene("res://Scenes/YouDied.tscn")

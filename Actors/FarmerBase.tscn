@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://pictures/saucer.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/FarmerBase.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/UI/HealthBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sound/446625__idkmrgarcia__explosion.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 208.604, 8.97356 )
@@ -37,4 +38,8 @@ margin_left = -50.7184
 margin_top = 32.6743
 margin_right = -50.7184
 margin_bottom = 32.6743
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="finished" from="DeathSound" to="." method="_on_DeathSound_finished"]

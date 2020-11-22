@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://pictures/cow-dead.png" type="Texture" id=1]
+[ext_resource path="res://pictures/youdied.png" type="Texture" id=2]
+[ext_resource path="res://sound/Nightmare.ogg" type="AudioStream" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Button
+
+func _on_Button_pressed():
+	Global.goto_scene(Global.main_menu)
+"
+
+[node name="YouDied" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -242.682
+margin_top = 24.1175
+margin_right = -242.682
+margin_bottom = 24.1175
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="youdied" type="Sprite" parent="TextureRect2"]
+position = Vector2( 619.426, 109.122 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 765.729
+margin_top = 399.445
+margin_right = 937.729
+margin_bottom = 514.445
+text = "Is it over?"
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

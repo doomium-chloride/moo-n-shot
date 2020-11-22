@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/431860__cheetahzbrain__dead-cow.wav-89452ee4ad155ff346de965a7f11a5d3.sample"
+
+[deps]
+
+source_file="res://sound/431860__cheetahzbrain__dead-cow.wav"
+dest_files=[ "res://.import/431860__cheetahzbrain__dead-cow.wav-89452ee4ad155ff346de965a7f11a5d3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
