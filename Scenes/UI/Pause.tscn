@@ -3,6 +3,7 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
+const main_menu = \"res://Scenes/Menus/Home.tscn\"
 
 func _ready():
 	pause_mode = PAUSE_MODE_PROCESS
@@ -18,12 +19,11 @@ func toggle_pause():
 	visible = paused_state
 
 func _on_Continue_pressed():
-	print(\"continue\")
 	toggle_pause()
 
 
 func _on_Exit_pressed():
-	print(\"exit\")
+	Global.goto_scene(main_menu)
 "
 
 [node name="Pause" type="Control"]
@@ -47,6 +47,8 @@ margin_left = -28.0
 margin_top = 254.0
 margin_right = 29.0
 margin_bottom = -280.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }

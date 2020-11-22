@@ -10,8 +10,6 @@ export var max_hp = 10
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	health_bar.max_value = max_hp
-	Global.connect("update_hp", self, "update_hp")
-	Global.connect("set_max_hp", self, "set_max_hp")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
