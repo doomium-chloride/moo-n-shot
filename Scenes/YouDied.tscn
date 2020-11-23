@@ -9,6 +9,10 @@ script/source = "extends Button
 
 func _on_Button_pressed():
 	Global.goto_scene(Global.main_menu)
+
+func _input(event):
+	if event.is_action_pressed(\"ui_accept\"):
+		_on_Button_pressed()
 "
 
 [node name="YouDied" type="Control"]
