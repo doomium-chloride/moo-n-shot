@@ -4,7 +4,7 @@
 [ext_resource path="res://pictures/arrows/left.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Intro.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/focus_button.gd" type="Script" id=4]
-[ext_resource path="res://sound/Beginning of Conflict.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sound/intro-narration.ogg" type="AudioStream" id=5]
 
 [node name="Intro" type="Control"]
 anchor_right = 1.0
@@ -19,6 +19,7 @@ margin_left = 82.0
 margin_top = 51.0
 margin_right = 674.0
 margin_bottom = 286.0
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

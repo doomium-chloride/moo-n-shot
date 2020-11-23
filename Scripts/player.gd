@@ -55,9 +55,14 @@ func _process(delta):
 		shoot_bullet(get_bullet_pos())
 	if Input.is_action_pressed("ui_down"):
 		reload()
-	if Input.is_action_just_pressed("ui_shift"):
+	if Input.is_action_just_pressed("cheat_gun"):
 		shell_shots += 10
-	
+	if Input.is_action_just_pressed("cheat_life"):
+		hp += 1000
+	if Input.is_action_just_pressed("cheat_jump"):
+		jump_mult *= 2
+	if Input.is_action_just_pressed("cheat_speed"):
+		speed *= 2
 func cow_face_left(left):
 	if left:
 		get_node( "Sprite" ).set_flip_h( false )
