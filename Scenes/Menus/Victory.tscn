@@ -13,9 +13,13 @@ script/source = "extends \"res://Scripts/Monologue.gd\"
 func _ready():
 	next_scene = Global.main_menu
 	text_array = [
-		\"The space ship cracks\",
-		\"blah blah insert cool stuff\",
-		\"you won...\"
+		\"The spaceship starts to crack\",
+		\"Blue energy radiates from within the cracks of the spaceship\",
+		\"The blue energy engulfs the spaceship\",
+		\"After the blue enrgy fades away, the spaceship is nowhere to be seen\",
+		\"The invation of the agriculturalists has been fought off\",
+		\"At least until they go over budger on military spending next week\",
+		\"[You won, congratulations!]\"
 	]
 	init()
 
