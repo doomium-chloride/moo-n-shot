@@ -19,7 +19,14 @@ func _ready():
 		\"After the blue enrgy fades away, the spaceship is nowhere to be seen\",
 		\"The invation of the agriculturalists has been fought off\",
 		\"At least until they go over budger on military spending next week\",
-		\"[You won, congratulations!]\"
+		\"[You won, congratulations!]\",
+		\"Here are some cheat codes\",
+		\"Ctrl + Shift + G for powerful shots\\n\" \\
+		+ \"Ctrl + Shift + L for lots of HP\\n\" \\
+		+ \"Ctrl + Shift + S for running fast\\n\" \\
+		+ \"Ctrl + Shift + J for jumping high\",
+		\"Thank you for playing\" + \"\\n\" + \"MOO! n' Shot\",
+		\"Happy mooing and shooting\"
 	]
 	init()
 
