@@ -15,17 +15,17 @@ func _ready():
 	text_array = [
 		\"The spaceship starts to crack\",
 		\"Blue energy radiates from within the cracks of the spaceship\",
-		\"The blue energy engulfs the spaceship\",
-		\"After the blue enrgy fades away, the spaceship is nowhere to be seen\",
+		\"It engulfs the spaceship\",
+		\"After a moment, the blue energy fades away, and the spaceship is nowhere to be seen\",
 		\"The invasion of the agriculturalists has been fought off\",
-		\"At least until they go over budger on military spending next week\",
+		\"At least until they go over budget on military spending next week\",
 		\"[You won, congratulations!]\",
-		\"Here are some cheat codes\",
+		\"Here are some cheat codes \\n It might break the game though\",
 		\"Ctrl + Shift + G for Gun that shoots more shots\\n\" \\
 		+ \"Ctrl + Shift + L for Lots of HP\\n\" \\
 		+ \"Ctrl + Shift + S for Speedy horizontal movement\\n\" \\
 		+ \"Ctrl + Shift + J for Jumping high\",
-		\"Thank you for playing\" + \"\\n\" + \"MOO! n' Shot\",
+		\"Thank you for playing\" + \"\\n\" + \"Moo n' Shot\",
 		\"Happy mooing and shooting\"
 	]
 	init()
