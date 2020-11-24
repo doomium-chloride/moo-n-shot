@@ -10,7 +10,6 @@ export var code = "next"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	connect("pressed", self, "_on_button_press")
-	monologue.connect("press", self, "_on_press_signal")
 
 
 func _on_button_press():
