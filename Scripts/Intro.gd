@@ -7,7 +7,7 @@ func _ready():
 		"The year is 1969",
 		"America has sent its finest astronauts on a lunar expedition",
 		"The purpose: to establish the planet's first off-world dairy farm",
-		"But when they finally arrived, they were shocked to see that any animals introduced to the moonscale mysteriously died",
+		"But when they finally arrived, they were shocked to see that any animals introduced to the moonscape mysteriously died",
 		"Worse still, they discovered the cheese the moon was made from was completely inedible",
 		"The moon was deemed inhospitable due to its seemingly unsurvivable environment and poor Wi-Fi reception",
 		"The project was abandoned",
