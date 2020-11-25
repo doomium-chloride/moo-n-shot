@@ -172,7 +172,8 @@ margin_top = 487.934
 margin_right = 879.505
 margin_bottom = 520.934
 text = "Collect Ammo Crate
-to upgrade shotgun shells"
+to do more damage 
+everyime you fire"
 __meta__ = {
 "_edit_use_anchors_": false
 }
