@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://pictures/arrows/right.png" type="Texture" id=1]
+[ext_resource path="res://pictures/arrows/left.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Outro.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/focus_button.gd" type="Script" id=4]
+
+[node name="Outro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="."]
+margin_left = 49.2924
+margin_top = 66.2924
+margin_right = 449.292
+margin_bottom = 114.292
+rect_min_size = Vector2( 400, 0 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SlideContainer" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -549.359
+margin_top = 25.8471
+margin_right = 290.641
+margin_bottom = 585.847
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slide" type="TextureRect" parent="SlideContainer"]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prev" type="Button" parent="."]
+margin_left = 58.1561
+margin_top = 440.694
+margin_right = 98.1561
+margin_bottom = 460.694
+text = "Prev"
+icon = ExtResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+code = "prev"
+
+[node name="Skip" type="Button" parent="."]
+margin_left = 319.212
+margin_top = 451.033
+margin_right = 357.212
+margin_bottom = 471.033
+text = "Skip"
+script = ExtResource( 4 )
+code = "skip"
+
+[node name="Next" type="Button" parent="."]
+margin_left = 545.375
+margin_top = 441.986
+margin_right = 587.375
+margin_bottom = 461.986
+text = "Next"
+icon = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Typer" type="Timer" parent="."]
+wait_time = 0.01
+
+[node name="Narration" type="Node" parent="."]

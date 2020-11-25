@@ -71,9 +71,9 @@ __meta__ = {
 
 [node name="DownArrow" type="TextureRect" parent="."]
 margin_left = 59.0405
-margin_top = 509.124
+margin_top = 507.832
 margin_right = 99.0405
-margin_bottom = 549.124
+margin_bottom = 547.832
 texture = ExtResource( 4 )
 flip_v = true
 __meta__ = {

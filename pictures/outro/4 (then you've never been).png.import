@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/right - Copy.png-78db1d3a7b05ec3a9953e22aad07fb3f.stex"
+path="res://.import/4 (then you've never been).png-37dfc30d9c44b2867229bbbb21a75749.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pictures/arrows/right - Copy.png"
-dest_files=[ "res://.import/right - Copy.png-78db1d3a7b05ec3a9953e22aad07fb3f.stex" ]
+source_file="res://pictures/outro/4 (then you've never been).png"
+dest_files=[ "res://.import/4 (then you've never been).png-37dfc30d9c44b2867229bbbb21a75749.stex" ]
 
 [params]
 
