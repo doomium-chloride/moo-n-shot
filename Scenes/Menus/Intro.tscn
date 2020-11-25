@@ -4,7 +4,7 @@
 [ext_resource path="res://pictures/arrows/left.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Intro.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/focus_button.gd" type="Script" id=4]
-[ext_resource path="res://sound/intro-narration.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sound/Beginning of Conflict.ogg" type="AudioStream" id=27]
 
 [node name="Intro" type="Control"]
 anchor_right = 1.0
@@ -15,11 +15,32 @@ __meta__ = {
 }
 
 [node name="Text" type="Label" parent="."]
-margin_left = 82.0
-margin_top = 51.0
-margin_right = 674.0
-margin_bottom = 286.0
+margin_left = 49.2924
+margin_top = 66.2924
+margin_right = 449.292
+margin_bottom = 114.292
+rect_min_size = Vector2( 400, 0 )
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SlideContainer" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -549.359
+margin_top = 25.8471
+margin_right = 290.641
+margin_bottom = 585.847
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slide" type="TextureRect" parent="SlideContainer"]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -61,6 +82,9 @@ __meta__ = {
 [node name="Typer" type="Timer" parent="."]
 wait_time = 0.01
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
+volume_db = -15.0
 autoplay = true
+
+[node name="Narration" type="Node" parent="."]

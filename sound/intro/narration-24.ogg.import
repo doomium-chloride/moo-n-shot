@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/narration-24.ogg-a062a8f52ae56ca66fb53d6880c3fa90.oggstr"
+
+[deps]
+
+source_file="res://sound/intro/narration-24.ogg"
+dest_files=[ "res://.import/narration-24.ogg-a062a8f52ae56ca66fb53d6880c3fa90.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

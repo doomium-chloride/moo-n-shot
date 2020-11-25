@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Chronos.ogg-398c6dca4855d372c3c847801f108c9f.oggstr"
+
+[deps]
+
+source_file="res://sound/Chronos.ogg"
+dest_files=[ "res://.import/Chronos.ogg-398c6dca4855d372c3c847801f108c9f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
