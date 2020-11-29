@@ -13,6 +13,8 @@
 [node name="How2Play" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 2.58472
+margin_right = 2.58472
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -111,10 +113,10 @@ __meta__ = {
 }
 
 [node name="EscButton" type="Button" parent="."]
-margin_left = 392.878
-margin_top = 479.466
-margin_right = 457.878
-margin_bottom = 521.466
+margin_left = 370.908
+margin_top = 513.067
+margin_right = 435.908
+margin_bottom = 555.067
 button_mask = 0
 text = "ESC"
 __meta__ = {
@@ -122,10 +124,10 @@ __meta__ = {
 }
 
 [node name="esc" type="Label" parent="."]
-margin_left = 368.97
-margin_top = 448.279
-margin_right = 514.97
-margin_bottom = 473.279
+margin_left = 459.435
+margin_top = 523.236
+margin_right = 605.435
+margin_bottom = 548.236
 text = "Escape to pause"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -173,7 +175,30 @@ margin_right = 879.505
 margin_bottom = 520.934
 text = "Collect Ammo Crate
 to do more damage 
-everyime you fire"
+everytime you fire"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnterButton" type="Button" parent="."]
+margin_left = 360.569
+margin_top = 385.124
+margin_right = 425.569
+margin_bottom = 427.124
+button_mask = 0
+text = "Enter"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnterDesc" type="Label" parent="."]
+margin_left = 442.953
+margin_top = 382.953
+margin_right = 608.953
+margin_bottom = 430.953
+text = "Enter button to select 
+Menu buttons
+Arrows to navigate menus"
 __meta__ = {
 "_edit_use_anchors_": false
 }
