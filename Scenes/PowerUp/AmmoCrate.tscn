@@ -14,7 +14,7 @@ script/source = "extends \"res://Scripts/PowerUp.gd\"
 
 
 func power_up(player):
-	player.shell_shots += 1
+	player.upgrade_shot(1)
 	queue_free()
 "
 

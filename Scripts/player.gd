@@ -56,13 +56,26 @@ func _process(delta):
 	if Input.is_action_pressed("ui_down"):
 		reload()
 	if Input.is_action_just_pressed("cheat_gun"):
-		shell_shots += 10
+		upgrade_shot(10)
 	if Input.is_action_just_pressed("cheat_life"):
 		hp += 1000
+		$AppleCrunch.play()
 	if Input.is_action_just_pressed("cheat_jump"):
 		jump_mult *= 2
+		$PowerUp.play()
 	if Input.is_action_just_pressed("cheat_speed"):
 		speed *= 2
+		$PowerUp.play()
+	if Input.is_action_just_pressed("cheat_drop"):
+		if Global.drop_chance < 1:
+			$MooSoud.play()
+			Global.drop_chance = 1
+
+func upgrade_shot(shots):
+	shell_shots += shots
+	if not $PowerUp.playing:
+		$PowerUp.play()
+
 func cow_face_left(left):
 	if left:
 		get_node( "Sprite" ).set_flip_h( false )

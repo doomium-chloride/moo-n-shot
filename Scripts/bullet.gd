@@ -6,7 +6,7 @@ extends Area2D
 # var b = "text"
 export var velocity = Vector2()
 export var damage = 1
-
+const is_bullet = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,3 +30,4 @@ func _on_Bullet_body_shape_entered(body_id, body, body_shape, area_shape):
 		body.knockback(get_left())
 	if not body.get("dying") == true:
 		queue_free()
+

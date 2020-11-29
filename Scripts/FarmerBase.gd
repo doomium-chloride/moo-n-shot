@@ -43,3 +43,8 @@ func got_hit(dmg):
 
 func _on_DeathSound_finished():
 	Global.goto_scene("res://Scenes/Menus/Victory.tscn")
+
+
+func _on_Glass_area_shape_entered(area_id, area, area_shape, self_shape):
+	if area.get("is_bullet") == true:
+		got_hit(area.damage)
