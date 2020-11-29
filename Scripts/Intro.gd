@@ -98,7 +98,7 @@ func _ready():
 		"Deciding they had no other choice\n" + "America declared war on the moon",
 		"Suiting up them up in advanced lunar resistant attire they sent their finest agriculturalists to the moon\n",
 		"Their purpose: harvest the milk and cure humanity of its deadly plague",
-		"But the cows will not go down without a fight\n" + "And the dairy farm is not the only thing America has left behind...",
+		"But the cows will not go down without a fight\n" + "And the dairy farm was not the only thing the Americans left behind...",
 		"[Prepare for combat]"
 	]
 	init_narration_audio()
