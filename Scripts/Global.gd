@@ -31,6 +31,8 @@ var drop_chance = 0.2
 
 var current_scene = null
 
+const low_ammo = 3
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()

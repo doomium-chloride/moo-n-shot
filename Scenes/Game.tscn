@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Actors/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Farm.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://pictures/barn.png" type="Texture" id=11]
 [ext_resource path="res://Actors/farmer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://pictures/arrows/right.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/UI/ReloadPrompt.tscn" type="PackedScene" id=14]
 
 [node name="Game" type="Node"]
 
@@ -34,6 +35,10 @@ margin_right = 0.0
 margin_bottom = 0.0
 
 [node name="Pause" parent="UI" instance=ExtResource( 10 )]
+
+[node name="Reload" parent="UI" instance=ExtResource( 14 )]
+margin_top = 20.0
+margin_right = -50.0
 
 [node name="Backgroud" parent="." instance=ExtResource( 5 )]
 
